@@ -34,9 +34,9 @@ There is a bulleted list that addresses the three questions for unpaid and paid 
 ## Results
 
 *  How many Vine & non-Vine reviews were there
-  * 
+  * test
 * How many Vine reviews were 5 stars?
-  *  
+  ** test  
 * How many non-Vine reviews were 5 stars?
   *  
 * What % of Vine reviews were 5 stars?
