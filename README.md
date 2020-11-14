@@ -33,16 +33,20 @@ There is a bulleted list that addresses the three questions for unpaid and paid 
 -->
 ## Results
 
-*  How many Vine & non-Vine reviews were there
-  * test
-* How many Vine reviews were 5 stars?
-  ** test  
-* How many non-Vine reviews were 5 stars?
-  *  
-* What % of Vine reviews were 5 stars?
-  * 
-* What % of non-Vine reviews were 5 stars?
-  * 
+[Applies for Game Reviews dataset:](https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Video_Games_v1_00.tsv.gz)
+![Vine_Results](https://github.com/jt-schmidt/Amazon_Vine_Analysis/blob/main/Vine_Results.PNG)
+
+How many Vine & non-Vine reviews were there
+  * Vine = 94
+  * Non-Vine = 40,471
+
+How many Vine & non-Vine reviews were 5 stars?
+  * Vine = 48
+  * Non-Vine = 15,663
+
+What % of Vine & non-Vine reviews were 5 stars?
+  * Vine = 51.06%
+  * Non-Vine = 38.70%
 
 Method of calculation:
 ``` Python
@@ -61,15 +65,15 @@ vine_N_5star_percent = ( vine_N_5star_Total / vine_N_Total ) * 100
 
 Data modifications to raw result include:
 * Total Votes >= 20
- * ``` Python
+ ``` Python
  vine_df.filter((vine_df.total_votes>=20))
  ```
 * Helpful Votes / Total Votes >= 50%
- * ``` Python
+ ``` Python
  vine_vote_over20_df.filter( ( vine_vote_over20_df.helpful_votes / vine_vote_over20_df.total_votes ) >= 0.5 )
  ```
 * Isolation of Vine vs Non-Vine Reviews ( vine == 'N' or 'Y' )
- * ``` Python
+ ``` Python
  vine_helpful_over50percent_df.filter(  vine_helpful_over50percent_df.vine == 'Y' )
  ```
  
