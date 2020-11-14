@@ -34,6 +34,7 @@ There is a bulleted list that addresses the three questions for unpaid and paid 
 ## Results
 
 [Applies for Game Reviews dataset:](https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Video_Games_v1_00.tsv.gz)
+
 ![Vine_Results](https://github.com/jt-schmidt/Amazon_Vine_Analysis/blob/main/Vine_Results.PNG)
 
 How many Vine & non-Vine reviews were there
@@ -82,3 +83,13 @@ Summary: In your summary, state if there is any positivity bias for reviews in t
 The summary states whether or not there is bias, and the results support this statement (2 pt)
 An additional analysis is recommended to support the statement (2 pt)
 -->
+## Summary
+
+For reviews of Video Games on Amazon, being a paid Vine subscriber appears to indicate there is positivity bias versus non-subscribers due to the 51.06% versus 38.7% delta.  
+However, non-subscribers out number subscribers 430 to 1 (40,471:94).  Due to small subscriber dataset relative to non-subscriber, this leads to conclusion that additional review is necessary for a more confident determination.
+
+For a more thorough analysis, I would recommend additional analysis which does the following:
+1.  Look at overall distribution of ratings for paid vs non-paid instead of limiting view to only 5-star.
+2.  Select several Amazon review datasets & repeat this analysis for comparison instead of limiting to the one selected.
+3.  Consider a join of REVIEW_ID with CUSTOMER_ID to find out if particular customers have a pattern of providing positive versus negative reviews as does or does not relate to subscription status.
+4.  Consider a join of REVIEW_ID with PRODUCT_ID to find out if particular products have a pattern of receiving positive versus negative reviews as does or does not relate to subscription status.
