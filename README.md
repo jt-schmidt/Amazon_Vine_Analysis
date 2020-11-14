@@ -59,6 +59,20 @@ vine_Y_5star_percent = ( vine_Y_5star_Total / vine_Y_Total ) * 100
 vine_N_5star_percent = ( vine_N_5star_Total / vine_N_Total ) * 100
 ```
 
+Data modifications to raw result include:
+* Total Votes >= 20
+ * ``` Python
+ vine_df.filter((vine_df.total_votes>=20))
+ ```
+* Helpful Votes / Total Votes >= 50%
+ * ``` Python
+ vine_vote_over20_df.filter( ( vine_vote_over20_df.helpful_votes / vine_vote_over20_df.total_votes ) >= 0.5 )
+ ```
+* Isolation of Vine vs Non-Vine Reviews ( vine == 'N' or 'Y' )
+ * ``` Python
+ vine_helpful_over50percent_df.filter(  vine_helpful_over50percent_df.vine == 'Y' )
+ ```
+ 
 <!--
 Summary: In your summary, state if there is any positivity bias for reviews in the Vine program. Use the results of your analysis to support your statement. Then, provide one additional analysis that you could do with the dataset to support your statement.
 The summary states whether or not there is bias, and the results support this statement (2 pt)
